@@ -1,6 +1,6 @@
 {
     "ownerId": "279550792774582272",
-    "modRole": "MODERATOR",
+    "modRole": "moderator",
     "cooldown": 12,
     "prefix": "!"
 }
