@@ -15,7 +15,7 @@ exports.run = async (client, message, args) => {
     .addField('User:', `${user.tag} (${user.id})`)
     .addField('Moderator:', `${message.author.tag}`)
     .addField('Reason', reason);
-    await message.channel.send(embed);
+    await message.channel.send({embed});
   } catch (error) {
     console.error(error);
   }
