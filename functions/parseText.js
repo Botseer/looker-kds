@@ -1,6 +1,7 @@
 /*
 	Yes, this is a modified version of Auto by Hackzilla
 */
+const path = require('path');
 const issue = require(path.join(__dirname, 'issueList.json'));
 function parse(input) {
   if (input.includes('Block-scoped declarations (let, const, function, class) not yet supported outside strict mode')) {
