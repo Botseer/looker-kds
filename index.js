@@ -52,6 +52,7 @@ let permlvl = 0;
 let mod_role = message.guild.roles.find('name', config.modRole);
 if (mod_role && message.member.roles.has(mod_role.id)) permlvl = 1;
 if (message.author.id === config.ownerId) permlvl = 2;
+  console.log(permlvl);
   return permlvl;
 };
 
