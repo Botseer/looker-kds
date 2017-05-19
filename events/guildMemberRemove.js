@@ -18,6 +18,6 @@ var byebyemsg =
   .setThumbnail(member.user.displayAvatarURL)
   .setFooter(`User Leave `)
   .setTimestamp()
-  member.guild.channels.get(`304930941174939649`).send(embed).catch(err => console.error(err));
+  member.guild.channels.get(`304930941174939649`).send({embed}).catch(err => console.error(err));
 
 };
