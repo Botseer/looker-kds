@@ -1,7 +1,5 @@
 exports.run = (client, message, args) => {
 
-if(message.channel.id !== "308184273100210176") return;
-
 client.user.setStatus(args[0]);
 
 }
