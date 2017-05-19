@@ -1,7 +1,7 @@
 exports.run = (client, message) => {
-  message.channel.sendMessage('Ping?')
+  message.channel.send('Ping?')
     .then(msg => {
-      msg.edit(`Pong! (took: ${msg.createdTimestamp - message.createdTimestamp}ms)`);
+      msg.edit(`:ping_pong: Pong! (:blue_heart: took: ${msg.createdTimestamp - message.createdTimestamp}ms)`);
     });
 };
 
