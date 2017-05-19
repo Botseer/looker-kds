@@ -1,6 +1,6 @@
-const Discord = require('discord.js');
 module.exports = async (member) => {
-
+const Discord = require('discord.js');
+  
 var welcomemsg = 
   [
     `**${member.user.tag}**, if our dog doesn't like you, we won't either !`,
