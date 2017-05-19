@@ -5,7 +5,7 @@ const moment = require('moment');
 const fs = require('fs');
 require('./util/eventLoader')(client);
 
-client.login('MzEzOTU3Nzg5MTQ2MDIxODky.C_xefg.mKMsMhALEBQ5N6W7y97mKvc-Oms');
+client.login(process.env.TOKEN);
 const log = message => {
   console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] ${message}`);
 };
