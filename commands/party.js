@@ -813,8 +813,12 @@ let party = `#${message.author.tag}\n1. `
 if(!args[0]) return message.reply("You must specify a number of pokemons for your party!");
 
 if(!parseInt(args[0])) return message.reply("Cant understand what number is that :thinking:");
-let numteam = parseInt(args[0]);
-if(numteam > 6) numteam === 6;
+var numteam = parseInt(args[0]);
+	
+if(numteam > 6) {
+	message.channel.send("You can have a party max of 6 pokemons so I will give only 6 pokemons.")
+numteam === 6;
+}
 for (var i=0; i< numteam; i++)
 {
     var randomNumber = Math.floor(Math.random()*allpoke.length);
