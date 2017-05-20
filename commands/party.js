@@ -808,18 +808,20 @@ let allpoke =
 	"Marshadow"
 ]
 
-let party = ""
+let party = `${message.author.user.tag}\n1.`
 
 if(!args[0]) return message.reply("You must specify a number of pokemons for your party!");
 
 if(!parseInt(args[0])) return message.reply("Cant understand what number is that :thinking:");
-for (var i=0; i< parseInt(args[0]); i++)
+let numteam = parseInt(args[0]);
+if(numteam > 6) numteam === 6;
+for (var i=0; i< numteam; i++)
 {
     var randomNumber = Math.floor(Math.random()*allpoke.length);
-    party+= allpoke[randomNumber] + "\n";
+    party+= allpoke[randomNumber] + "\n" + (i+2);
 }
 
-message.channel.send(party);
+message.channel.send(party, {code: "md"});
 
 }
 
