@@ -808,7 +808,7 @@ let allpoke =
 	"Marshadow"
 ]
 
-let party = `#${message.author.tag}\n1.`
+let party = `#${message.author.tag}\n1. `
 
 if(!args[0]) return message.reply("You must specify a number of pokemons for your party!");
 
@@ -818,9 +818,9 @@ if(numteam > 6) numteam === 6;
 for (var i=0; i< numteam; i++)
 {
     var randomNumber = Math.floor(Math.random()*allpoke.length);
-    party+= allpoke[randomNumber] + "\n" + (i+2);
+    party+= allpoke[randomNumber] + "\n" + (i+2) + ". ";
 }
-
+party = party.slice(0,-5);
 message.channel.send(party, {code: "md"});
 
 }
