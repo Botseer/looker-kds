@@ -7,9 +7,9 @@ exports.run = (client, message, args) => {
   let mod_role = message.guild.roles.find('name', config.modRole);
   if (mod_role && message.member.roles.has(mod_role.id)) permlvl = 1;
   if (message.author.id === config.ownerId) permlvl = 2;
+  client.commandsss = client.commands.filter(c => c.conf.permLevel <= permlvl)
 
   if (!args[0]) {
-    client.commandsss = client.commands.filter(c => c.conf.permLevel <= permlvl)
     const commandNames = Array.from(client.commandsss.keys());
     const longest = commandNames.reduce((long, str) => Math.max(long, str.length), 0);
     message.channel.send(`= Command List =\n\n[Use ${config.prefix}help <commandname> for details]\n\n${client.commandsss.map(c => `${config.prefix}${c.help.name}${' '.repeat(longest - c.help.name.length)} :: ${c.help.description}`).join('\n')}`, {code: "asciidoc"})
