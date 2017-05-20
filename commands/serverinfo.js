@@ -1,4 +1,5 @@
 const Discord = require('discord.js');
+const moment = require('moment');
 exports.run = (client, message, args) => {
 
  if(message.channel.id !== "308184273100210176") return;
@@ -13,7 +14,7 @@ const embed = new Discord.RichEmbed()
 .addField('TEXT CHANNELS', message.guild.channels.filter(c => c.type === "text").size-1 , true)
 .addField('VOICE CHANNELS', message.guild.channels.filter(c => c.type === "voice").size , true)
 .addField('ROLES', message.guild.roles.size, true)
-.addField('CREATED DATE', message.guild.createdAt, true)
+.addField('CREATED DATE', moment(message.guild.createdAt).format('dddd, MMMM Do YYYY, h:mm:ss a'), true)
 
 message.channel.send({embed});
 }
