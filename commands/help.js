@@ -6,6 +6,7 @@ exports.run = (client, message, args) => {
   let permlvl = 0;
   let mod_role = message.guild.roles.find('name', config.modRole);
   if (mod_role && message.member.roles.has(mod_role.id)) permlvl = 1;
+  if (message.author.id === config.ownerId) permlvl = 2;
 
   if (!args[0]) {
     client.commandsss = client.commands.filter(c => c.conf.permLevel <= permlvl)
