@@ -817,7 +817,7 @@ var numteam = parseInt(args[0]);
 	
 if(numteam > 6) {
 	message.channel.send("You can have a party max of 6 pokemons so I will give only 6 pokemons.")
-numteam === 6;
+numteam === parseInt(6);
 }
 for (var i=0; i< numteam; i++)
 {
