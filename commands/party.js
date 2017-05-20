@@ -808,7 +808,7 @@ let allpoke =
 	"Marshadow"
 ]
 
-let party = `${message.author.user.tag}\n1.`
+let party = `${message.author.tag}\n1.`
 
 if(!args[0]) return message.reply("You must specify a number of pokemons for your party!");
 
