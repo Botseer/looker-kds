@@ -820,7 +820,7 @@ for (var i=0; i< numteam; i++)
     var randomNumber = Math.floor(Math.random()*allpoke.length);
     party+= allpoke[randomNumber] + "\n" + (i+2) + ". ";
 }
-party = party.slice(0,-5);
+party = party.slice(0,-3);
 message.channel.send(party, {code: "md"});
 
 }
