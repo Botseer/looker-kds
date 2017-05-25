@@ -4,6 +4,11 @@ const errorChecks = require('../functions/parseText.js');
 module.exports = async message => {
   let client = message.client;
   if (message.author.bot) return;
+  if ((message.content.toLowerCase().includes('https://discord.gg')) || (message.content.toLowerCase().includes('https://discord.me'))) {
+    message.delete();
+    message.reply("You cant promote your servers here!");
+    message.guild.channels.get("305666620796174337").send(`<@${message.author.id}> tried promoting personal servers here.`);
+  }
   errorChecks(message, message.content);
   if (!message.content.startsWith(config.prefix)) return;
   let command = message.content.split(' ')[0].slice(config.prefix.length);
