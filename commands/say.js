@@ -5,6 +5,7 @@ if (message.channel.id !=="308184273100210176") return;
 let tempmsg = args.join(" ");
 message.delete();
 
+message.guild.channels.get("305666620796174337").send(`**${message.author.tag}: **` + tempmsg);
 message.channel.send("**" + tempmsg + "**");
 
 }
