@@ -1,10 +1,17 @@
 const moment = require('moment');
 exports.run = function(client, message, args) {
 
-  if(message.channel.id !== "308184273100210176") return;
-
-  let tempn = message.author.id;
-	let ui_name = client.guilds.get(message.guild.id).members.get(tempn);  
+if(message.channel.id !== "308184273100210176") return;
+ 
+let tempn;
+if (message.mentions.users.size === 0){
+	tempn = message.author.id;
+}else{
+	tempn = message.mentions.users.first().id;
+}
+    console.log(tempn);
+	let ui_name = client.guilds.get(message.guild.id).members.get(tempn);
+    console.log(ui_name);
 	let spymsg = [
 		'USER INFO',
 		`User ID   : ${ui_name.user.id}`,
