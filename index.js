@@ -5,7 +5,7 @@ const moment = require('moment');
 const fs = require('fs');
 require('./util/eventLoader')(client);
 
-client.login(process.env.TOKEN);
+client.login('process.env.TOKEN');
 const log = message => {
   console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] ${message}`);
 };
@@ -47,7 +47,7 @@ client.reload = command => {
 
 client.elevation = message => {
 
-if(message.channel.type === "dm") return message.reply("You want to talk to me ??\nCome lets talk here in this channel <#308184273100210176>");
+if(message.channel.type === "dm") return message.reply("I dont talk with humans in direct message.\nI will respond only in the server.");
 let permlvl = 0;
 let mod_role = message.guild.roles.find('name', config.modRole);
 if (mod_role && message.member.roles.has(mod_role.id)) permlvl = 1;
