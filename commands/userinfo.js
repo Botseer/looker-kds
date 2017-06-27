@@ -1,7 +1,5 @@
 const moment = require('moment');
 exports.run = function(client, message, args) {
-
-if(message.channel.id !== "308184273100210176") return;
  
 let tempn;
 if (message.mentions.users.size === 0){
