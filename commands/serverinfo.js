@@ -9,9 +9,9 @@ const embed = new Discord.RichEmbed()
 .setDescription('\Hello everyone, This is the official server for the discussion about the Dyanmic Emerald hacks created by KDS and DizzyEgg!\nMore info about the server is in the channel #server-info-and-rules.')
 .addField('SERVER ID', message.guild.id, false)
 .addField('MEMBERS', message.guild.memberCount + " (online: " + message.guild.members.filter(m => ((m.user.presence.status === "online" )||(m.user.presence.status === "dnd" )||(m.user.presence.status === "idle" ))).size + " )", false)
-.addField('TEXT CHANNELS', message.guild.channels.filter(c => c.type === "text").size , false)
-.addField('VOICE CHANNELS', message.guild.channels.filter(c => c.type === "voice").size , false)
-.addField('CREATED DATE', moment(message.guild.createdAt).format('dddd, MMMM Do YYYY, h:mm:ss a'), false)
+.addField('TOTAL MEMBERS', message.guild.memberCount)
+.addField('MEMBERS ONLINE', message.guild.members.filter(m => ((m.user.presence.status === "online" )||(m.user.presence.status === "dnd" )||(m.user.presence.status === "idle" ))).size)
+.addField('CREATED DATE', moment(message.guild.createdAt).format('dddd, MMMM Do YYYY, h:mm:ss a'))
 
 message.channel.send({embed});
 }
